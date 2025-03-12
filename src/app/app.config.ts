@@ -7,6 +7,7 @@ import { environment } from '~environments/environment';
 import { HttpClient, provideHttpClient } from '@angular/common/http';
 import { provideTranslateService, TranslateLoader } from '@ngx-translate/core';
 import { HTTPLoaderFactory } from './loader';
+import { provideAnimations } from '@angular/platform-browser/animations';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -14,6 +15,7 @@ export const appConfig: ApplicationConfig = {
     provideRouter(routes),
     provideAppConfig(environment),
     provideHttpClient(),
+    provideAnimations(),
     provideFirebaseService(environment.firebaseConfig),
     provideTranslateService({
       defaultLanguage: environment.defaultLang,

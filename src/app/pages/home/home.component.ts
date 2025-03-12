@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-// import { LayoutComponent } from '@components';
+import { LayoutComponent } from '@components';
 import { ROUTE } from '@enums';
 import { FirebaseService } from 'common-service';
-// import { NzButtonModule } from 'ng-zorro-antd/button';
+import { NzButtonModule } from 'ng-zorro-antd/button';
 
 @Component({
   selector: 'tt-home',
@@ -11,8 +11,8 @@ import { FirebaseService } from 'common-service';
   styleUrls: ['./home.component.scss'],
   standalone: true,
   imports: [
-    // NzButtonModule,
-    // LayoutComponent,
+    NzButtonModule,
+    LayoutComponent,
   ],
 })
 export class HomeComponent implements OnInit {

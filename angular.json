@@ -35,6 +35,7 @@
               "src/assets/i18n"
             ],
             "styles": [
+              "src/assets/scss/themes/antd.less",
               "src/styles.scss"
             ],
             "scripts": []
@@ -100,6 +101,7 @@
               "src/assets/i18n"
             ],
             "styles": [
+              "src/assets/scss/themes/antd.less",
               "src/styles.scss"
             ],
             "scripts": []
