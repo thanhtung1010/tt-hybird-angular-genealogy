@@ -7,9 +7,9 @@
       (click)="isCollapsed = !isCollapsed"
     ></span>
   </nz-header>
-  <nz-layout>
+  <nz-layout class="p-4 pl-0 gap-4">
     <nz-sider nzCollapsible [(nzCollapsed)]="isCollapsed" [nzTrigger]="null">
-      <ul class="h-[calc(100% - 40px)]" nz-menu nzTheme="light" nzMode="inline">
+      <ul nz-menu nzTheme="dark" nzMode="inline">
         <li nz-submenu nzTitle="User" nzIcon="user">
           <ul>
             <li nz-menu-item>Tom</li>
