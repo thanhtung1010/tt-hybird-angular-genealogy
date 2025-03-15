@@ -94,7 +94,7 @@
 @text-color-secondary: fade(@black, 45%);
 @text-color-inverse: @white;
 @icon-color: inherit;
-@icon-color-hover: fade(@black, 75%);
+@icon-color-hover: #591919;
 @heading-color: fade(@black, 85%);
 @text-color-dark: fade(@white, 85%);
 @text-color-secondary-dark: fade(@white, 65%);
@@ -364,21 +364,21 @@
 
 // Layout
 @layout-body-background: #f0f2f5;
-@layout-header-background: #591919;
+@layout-header-background: #D6B98F;
 @layout-header-height: 64px;
-@layout-header-padding: 0 50px;
+@layout-header-padding: 0 24px;
 @layout-header-color: @text-color;
 @layout-footer-padding: 24px 50px;
-@layout-footer-background: #591919;
-@layout-sider-background: #591919;
+@layout-footer-background: #E2DED2;
+@layout-sider-background: #E2DED2;
 @layout-trigger-height: 48px;
 @layout-trigger-background: #591919;
-@layout-trigger-color: #fff;
+@layout-trigger-color: #E2DED2;
 @layout-zero-trigger-width: 36px;
 @layout-zero-trigger-height: 42px;
 // Layout light theme
-@layout-sider-background-light: #fff;
-@layout-trigger-background-light: #fff;
+@layout-sider-background-light: #E2DED2;
+@layout-trigger-background-light: #E2DED2;
 @layout-trigger-color-light: @text-color;
 
 // z-index list, order by `z-index`
@@ -408,7 +408,7 @@
 @collapse-panel-border-radius: @border-radius-base;
 
 //Dropdown
-@dropdown-menu-bg: @component-background;
+@dropdown-menu-bg: transparent;
 @dropdown-vertical-padding: 5px;
 @dropdown-edge-child-vertical-padding: 4px;
 @dropdown-font-size: @font-size-base;
@@ -501,7 +501,7 @@
 // ---
 @cascader-bg: @component-background;
 @cascader-item-selected-bg: @primary-1;
-@cascader-menu-bg: @component-background;
+@cascader-menu-bg: transparent;
 @cascader-menu-border-color-split: @border-color-split;
 
 // Cascader
@@ -598,10 +598,10 @@
 @menu-item-height: 40px;
 @menu-item-group-height: @line-height-base;
 @menu-collapsed-width: 80px;
-@menu-bg: @component-background;
-@menu-popup-bg: @component-background;
+@menu-bg: transparent;
+@menu-popup-bg: transparent;
 @menu-item-color: @text-color;
-@menu-inline-submenu-bg: @background-color-light;
+@menu-inline-submenu-bg: transparent;
 @menu-highlight-color: @primary-color;
 @menu-highlight-danger-color: @error-color;
 @menu-item-active-bg: @primary-1;
@@ -610,7 +610,7 @@
 @menu-item-group-title-color: @text-color-secondary;
 @menu-item-vertical-margin: 4px;
 @menu-item-font-size: @font-size-base;
-@menu-item-boundary-margin: 8px;
+@menu-item-boundary-margin: 4px;
 @menu-item-padding-horizontal: 20px;
 @menu-item-padding: 0 @menu-item-padding-horizontal;
 @menu-horizontal-line-height: 46px;

@@ -1,26 +1,28 @@
 <section class="tt-auth">
-  <section class="tt-auth_container">
-    <section class="tt-auth_content-wrap">
-      <section [ngClass]="{'tt-auth_content-signup': isSignUp}">
-        <section class="tt-login-v2">
-          <section class="tt-auth-thirth_party_service tt-auth-thirth_party_service-v2">
-            <button class="tt-auth-thirth_party_service-button tt-auth-thirth_party_service-button-v2 tt-auth-thirth_party_service-google"
-              (click)="loginWithGoogle()" id="sign-in-button">
-              <img [src]="'google-logo' | AssetsLink:'svg'" alt="google-logo">
-              <span>{{'auth.google_login' | translate}}</span>
-            </button>
-            <button class="tt-auth-thirth_party_service-button tt-auth-thirth_party_service-button-v2 tt-auth-thirth_party_service-facebook"
-              (click)="loginWithFacebook()">
-              <img [src]="'facebook-logo' | AssetsLink:'svg'" alt="facebook-login-logo">
-              <span>{{'auth.facebook_login' | translate}}</span>
-            </button>
-          </section>
+    <section class="tt-auth_container">
+        <section class="tt-auth_content-wrap">
+            <section [ngClass]="{'tt-auth_content-signup': isSignUp}">
+                <section class="tt-login-v2">
+                    <section class="tt-auth-thirth_party_service tt-auth-thirth_party_service-v2">
+                        <button
+                            class="tt-auth-thirth_party_service-button tt-auth-thirth_party_service-button-v2 tt-auth-thirth_party_service-google"
+                            (click)="loginWithGoogle()" id="sign-in-button">
+                            <img [src]="'google-logo' | AssetsLink:'svg'" alt="google-logo">
+                            <span>{{'auth.google_login' | translate}}</span>
+                        </button>
+                        <button
+                            class="tt-auth-thirth_party_service-button tt-auth-thirth_party_service-button-v2 tt-auth-thirth_party_service-facebook"
+                            (click)="loginWithFacebook()">
+                            <img [src]="'facebook-logo' | AssetsLink:'svg'" alt="facebook-login-logo">
+                            <span>{{'auth.facebook_login' | translate}}</span>
+                        </button>
+                    </section>
+                </section>
+            </section>
         </section>
-      </section>
-    </section>
 
-    <img [src]="'lazy-cat' | AssetsLink:'svg'" alt="lazy-cat" class="tt-auth-lazy-cat">
-  </section>
+        <img [src]="'lazy-cat' | AssetsLink:'svg'" alt="lazy-cat" class="tt-auth-lazy-cat">
+    </section>
 </section>
 <!-- <section class="tt-auth">
   <section class="tt-auth_container">
@@ -127,8 +129,8 @@
       </section>
     </section> -->
 
-    <!-- region decord -->
-    <!-- <img [src]="'stand-right-bird' | TTAssetsLink:'svg'" alt="stand-right-bird" class="tt-auth-stand_birth">
+<!-- region decord -->
+<!-- <img [src]="'stand-right-bird' | TTAssetsLink:'svg'" alt="stand-right-bird" class="tt-auth-stand_birth">
     <img [src]="'lazy-cat' | TTAssetsLink:'svg'" alt="lazy-cat" class="tt-auth-lazy-cat">
   </section>
 </section> -->

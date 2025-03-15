@@ -2,67 +2,95 @@
 @use './variable.scss';
 
 .#{variable.$mainCls} {
-  scroll-behavior: smooth;
-  -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
 
-  @include meta.load-css('./components/login.scss');
+    @include meta.load-css('./components/login.scss');
 
-  &-theme-primary {
-    position: relative;
-    overflow: auto;
-    display: flex;
-    flex-direction: column;
-    font-size: variable.$mainFontSize;
-    font-weight: variable.$mainFontweight;
-    font-style: normal;
-    line-height: normal;
-    z-index: inherit;
-    background: transparent;
+    &-theme-primary {
+        position: relative;
+        overflow: auto;
+        display: flex;
+        flex-direction: column;
+        font-size: variable.$mainFontSize;
+        font-weight: variable.$mainFontweight;
+        font-style: normal;
+        line-height: normal;
+        z-index: inherit;
+        background: transparent;
 
-    &::-webkit-scrollbar {
-      width: 8px;
+        &::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        &::-webkit-scrollbar-track {
+            box-shadow: inset 0 0 2px colorMainRgba(0.3);
+            border-radius: 10px;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background: variable.$scrollBarColor;
+            border-radius: 10px;
+        }
+
+        &::-webkit-scrollbar-thumb:hover {
+            background: variable.$scrollBarHoverColor;
+            width: 10px;
+        }
+
+        p,
+        span,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            margin: unset;
+        }
+
+        * {
+            transition: all .3s ease;
+            font-family: 'Metrophobic', 'KoHo', sans-serif;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+
+            &::-webkit-scrollbar {
+                width: 4px;
+            }
+
+            &::-webkit-scrollbar-track {
+                box-shadow: inset 0 0 2px colorMainRgba(0.3);
+                border-radius: 10px;
+            }
+
+            &::-webkit-scrollbar-thumb {
+                background: variable.$scrollBarColor;
+                border-radius: 10px;
+            }
+
+            &::-webkit-scrollbar-thumb:hover {
+                background: variable.$scrollBarHoverColor;
+                width: 8px;
+            }
+        }
+
+        ul {
+            padding-inline-start: unset;
+        }
+
+        button {
+            font-weight: inherit;
+            cursor: pointer;
+        }
+
+        @media only screen and (max-width: 500px) {
+
+            &::-webkit-scrollbar {
+                width: 4px;
+            }
+        }
+
+        @include meta.load-css('./override-antd.scss');
     }
-
-    &::-webkit-scrollbar-track {
-      box-shadow: inset 0 0 2px colorMainRgba(0.3);
-      border-radius: 10px;
-    }
-
-    &::-webkit-scrollbar-thumb {
-      background: variable.$scrollBarColor;
-      border-radius: 10px;
-    }
-
-    &::-webkit-scrollbar-thumb:hover {
-      background: variable.$scrollBarHoverColor;
-      width: 10px;
-    }
-
-    p, span, h1, h2, h3, h4, h5, h6 {
-      margin: unset;
-    }
-
-    * {
-      transition: all .3s ease;
-      font-family: 'Metrophobic', 'KoHo', sans-serif;
-      box-sizing: border-box;
-      scroll-behavior: smooth;
-    }
-
-    ul {
-      padding-inline-start: unset;
-    }
-
-    button {
-      font-weight: inherit;
-      cursor: pointer;
-    }
-
-    @media only screen and (max-width: 500px) {
-
-      &::-webkit-scrollbar {
-        width: 4px;
-      }
-    }
-  }
 }

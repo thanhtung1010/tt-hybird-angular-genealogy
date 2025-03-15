@@ -1,4 +1,8 @@
-import { ApplicationConfig, importProvidersFrom, provideZoneChangeDetection } from '@angular/core';
+import {
+    ApplicationConfig,
+    importProvidersFrom,
+    provideZoneChangeDetection,
+} from '@angular/core';
 import { provideRouter } from '@angular/router';
 
 import { routes } from './app.routes';
@@ -10,21 +14,21 @@ import { HTTPLoaderFactory } from './loader';
 import { provideAnimations } from '@angular/platform-browser/animations';
 
 export const appConfig: ApplicationConfig = {
-  providers: [
-    provideZoneChangeDetection({ eventCoalescing: true }),
-    provideRouter(routes),
-    provideAppConfig(environment),
-    provideHttpClient(),
-    provideAnimations(),
-    provideFirebaseService(environment.firebaseConfig),
-    provideTranslateService({
-      defaultLanguage: environment.defaultLang,
-      loader: {
-        provide: TranslateLoader,
-        useFactory: HTTPLoaderFactory,
-        deps: [HttpClient],
-      },
-    }),
-    importProvidersFrom([]),
-  ]
+    providers: [
+        provideZoneChangeDetection({ eventCoalescing: true }),
+        provideRouter(routes),
+        provideAppConfig(environment),
+        provideHttpClient(),
+        provideAnimations(),
+        provideFirebaseService(environment.firebaseConfig),
+        provideTranslateService({
+            defaultLanguage: environment.defaultLang,
+            loader: {
+                provide: TranslateLoader,
+                useFactory: HTTPLoaderFactory,
+                deps: [HttpClient],
+            },
+        }),
+        importProvidersFrom([]),
+    ],
 };

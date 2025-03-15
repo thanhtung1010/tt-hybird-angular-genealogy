@@ -10,7 +10,7 @@ import { catchError, Observable, of, Subscriber } from 'rxjs';
 import { FirebaseService } from 'common-service';
 import { ROUTE } from '@enums';
 
-export const authActiveGuard: CanActivateFn = (
+export const layoutActiveGuard: CanActivateFn = (
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
 ):
@@ -33,10 +33,10 @@ export const authActiveGuard: CanActivateFn = (
             .subscribe({
                 next: (resp) => {
                     const loged = !!resp;
-                    if (!loged) {
+                    if (loged) {
                         subs.next(true);
                     } else {
-                        router.navigate([ROUTE.HOME]);
+                        router.navigate([ROUTE.AUTH]);
                         subs.next(false);
                     }
                     subs.complete();

@@ -1,44 +1,40 @@
-import { IMenuItem } from "common-service";
+import { IMenuItem } from 'common-service';
 
 export const ROUTE = {
-  HOME: '',
+    HOME: '',
 
-  GENEALOGY: 'genealogy',
+    GENEALOGY: 'genealogy',
+    FAMILY: 'family',
 
-  AUTH: 'auth',
-  LOGIN: '',
-  LOGOUT: 'log-out',
+    AUTH: 'auth',
+    LOGIN: '',
+    LOGOUT: 'log-out',
 
-  NOT_FOUND: '404',
-  NO_PERMISSION: '403',
+    NOT_FOUND: '404',
+    NO_PERMISSION: '403',
 };
 
 export const ROUTE_ICON = {
-  MAIN: 'home',
-  COMMON: 'admin-menu',
-  CHILD_MENU: 'direction-right',
+    MAIN: 'home',
+    COMMON: 'admin-menu',
+    CHILD_MENU: 'direction-right',
 };
 
 export const MENU: Array<IMenuItem> = [
-  {
-    title: "menu.auth_login",
-    label: "menu.auth_login",
-    href: ROUTE.HOME,
-    permission: [],
-    children: [],
-  },
-  {
-    title: "menu.home",
-    label: "menu.home",
-    href: ROUTE.HOME,
-    permission: [],
-    children: [],
-  },
-  {
-    title: "menu.genealogy",
-    label: "menu.genealogy",
-    href: ROUTE.GENEALOGY,
-    permission: [],
-    children: [],
-  },
+    {
+        title: 'menu.genealogy',
+        label: 'menu.genealogy',
+        icon: 'book',
+        href: ROUTE.GENEALOGY,
+        permission: [],
+        children: [],
+    },
+    {
+        title: 'menu.family',
+        label: 'menu.family',
+        icon: 'team',
+        href: ROUTE.FAMILY,
+        permission: [],
+        children: [],
+    },
 ];
