@@ -26,6 +26,11 @@ export const routes: Routes = [
                         (c) => c.FamilyComponent
                     ),
             },
+            {
+                path: '**',
+                pathMatch: 'full',
+                redirectTo: ROUTE.GENEALOGY,
+            },
         ],
     },
     {

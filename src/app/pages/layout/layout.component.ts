@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
 import { NzBreadCrumbModule } from 'ng-zorro-antd/breadcrumb';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { NzLayoutModule } from 'ng-zorro-antd/layout';
@@ -11,6 +11,7 @@ import { TranslateModule } from '@ngx-translate/core';
 import { MENU } from '@enums';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
+import { MenuItemDto, MenuService } from 'common-service';
 
 @Component({
     selector: 'tt-layout',
@@ -33,9 +34,16 @@ import { RouterModule } from '@angular/router';
 })
 export class LayoutComponent implements OnInit {
     isCollapsed = false;
-    menu = MENU;
+    menu: Array<MenuItemDto> = [];
+    breadcrumb: Array<string> = [];
 
-    constructor() {}
+    constructor(private menuService: MenuService) {}
 
-    ngOnInit() {}
+    ngOnInit() {
+        this.menu = this.menuService.menu.value;
+        this.breadcrumb = this.menuService.breadcrumb.value;
+        this.menuService.breadcrumb.subscribe(resp => {
+            this.breadcrumb = resp;
+        });
+    }
 }

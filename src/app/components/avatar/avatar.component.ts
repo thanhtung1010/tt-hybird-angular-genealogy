@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { FirebaseService, FirebaseUserModel } from 'common-service';
+import { FirebaseService, FirebaseUserDto } from 'common-service';
 
 @Component({
     selector: 'tt-avatar',
@@ -8,7 +8,7 @@ import { FirebaseService, FirebaseUserModel } from 'common-service';
     standalone: true,
 })
 export class AvatarComponent implements OnInit {
-    user!: FirebaseUserModel;
+    user!: FirebaseUserDto;
 
     constructor(private firebaseService: FirebaseService) {}
 
