@@ -6,6 +6,7 @@
     -webkit-overflow-scrolling: touch;
 
     @include meta.load-css('./components/login.scss');
+    @include meta.load-css('./components/table-layout.scss');
 
     &-theme-primary {
         position: relative;

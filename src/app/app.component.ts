@@ -29,5 +29,6 @@ export class AppComponent implements OnInit {
         this.menuService.getBreadcrumb().subscribe(resp => {
             this.menuService.breadcrumb = resp;
         });
+        console.log('hehe')
     }
 }

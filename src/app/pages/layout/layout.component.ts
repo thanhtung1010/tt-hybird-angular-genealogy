@@ -11,7 +11,7 @@ import { TranslateModule } from '@ngx-translate/core';
 import { MENU } from '@enums';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
-import { MenuItemDto, MenuService } from 'common-service';
+import { FirebaseService, MenuItemDto, MenuService } from 'common-service';
 
 @Component({
     selector: 'tt-layout',
@@ -37,9 +37,12 @@ export class LayoutComponent implements OnInit {
     menu: Array<MenuItemDto> = [];
     breadcrumb: Array<string> = [];
 
-    constructor(private menuService: MenuService) {}
+    constructor(private menuService: MenuService,
+        private firebase: FirebaseService,
+    ) {}
 
     ngOnInit() {
+        console.log(this.firebase.user)
         this.menu = this.menuService.menu.value;
         this.breadcrumb = this.menuService.breadcrumb.value;
         this.menuService.breadcrumb.subscribe(resp => {
