@@ -11,6 +11,8 @@ import { NzPaginationModule } from 'ng-zorro-antd/pagination';
 import { AppConfigService, AssetsLink, IApiBaseMeta } from 'common-service';
 import { ITableLayoutProps } from '@interfaces';
 import { EmptyComponent } from '@components';
+import { TableLayoutPropsDto } from '@dtos';
+import { NzSkeletonModule } from 'ng-zorro-antd/skeleton';
 
 @Component({
   selector: 'tt-table-layout',
@@ -27,49 +29,35 @@ import { EmptyComponent } from '@components';
     NzPaginationModule,
     EmptyComponent,
     AssetsLink,
+    NzSkeletonModule,
   ],
 })
 export class TableLayoutComponent implements OnChanges {
-  @Input() props: ITableLayoutProps | undefined;
+  @Input() props!: ITableLayoutProps;
+  @Input() data: unknown[] = [];
   @Input() loading: boolean = true;
   @Input() allowFilter: boolean = true;
-  @Input() expandFilter: boolean = false;
-
   @Input() nzLoadingIndicator!: TemplateRef<any>;
 
   @Output() oReset: EventEmitter<any> = new EventEmitter(undefined);
   @Output() oRefresh: EventEmitter<any> = new EventEmitter(undefined);
-  @Output() oToggleExpand: EventEmitter<any> = new EventEmitter(undefined);
   @Output() oChangeParams: EventEmitter<any> = new EventEmitter(undefined);
+
+  @Input() expandFilter: boolean = false;
+  @Output() expandFilterChange: EventEmitter<boolean> = new EventEmitter();
+
+  @Input() showFilterMb: boolean = false;
+  @Output() showFilterMbChange: EventEmitter<boolean> = new EventEmitter();
 
   private appConfigService = inject(AppConfigService);
 
-  showFilterMb = false;
-  list: any[] = [];
   defaultPageSize: number = this.appConfigService.config.value.defaultPageSize || 10;
   currentParams: IApiBaseMeta = {
     totalPages: 0,
     pageNumber: 0,
     pageSize: this.defaultPageSize,
   };
-  stateProps: ITableLayoutProps = {
-    data: [],
-    expandFilter: false,
-    showExpand: false,
-    showTable: true,
-    showReset: true,
-    showRefresh: true,
-    showExportExcel: true,
-    showDefaultButtons: true,
-    showPagination: true,
-    maxHeight: '',
-    minWidth: -1,
-    no_data_msg: 'error.NO_DATA',
-    param: { ...this.currentParams },
-    alertReset: false,
-    nzWidthConfig: [],
-  };
-  // expandFilter = false;
+  stateProps: TableLayoutPropsDto = TableLayoutPropsDto.createEmpty();
   column = {
     left: 16,
     right: 8,
@@ -79,11 +67,8 @@ export class TableLayoutComponent implements OnChanges {
 
   ngOnChanges() {
     if (this.props) {
-      this.stateProps = Object.assign(this.stateProps, this.props);
+      this.stateProps = TableLayoutPropsDto.fromJson(this.props ?? {});
     }
-    this.list = this.stateProps['data']
-      ? this.stateProps.data.map((item: any) => Object.assign({}, item))
-      : [];
     if (this.stateProps.param) {
       this.currentParams = this.stateProps.param;
     }
@@ -127,7 +112,11 @@ export class TableLayoutComponent implements OnChanges {
   }
   onToggleExpand() {
     this.expandFilter = !this.expandFilter;
-    this.oToggleExpand.emit(this.expandFilter);
+    this.expandFilterChange.emit(this.expandFilter);
+  }
+  onToggleShowFilterMb() {
+    this.expandFilter = !this.expandFilter;
+    this.expandFilterChange.emit(this.expandFilter);
   }
   //#endregion
 }

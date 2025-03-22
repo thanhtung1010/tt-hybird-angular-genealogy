@@ -42,7 +42,6 @@ export class LayoutComponent implements OnInit {
     ) {}
 
     ngOnInit() {
-        console.log(this.firebase.user)
         this.menu = this.menuService.menu.value;
         this.breadcrumb = this.menuService.breadcrumb.value;
         this.menuService.breadcrumb.subscribe(resp => {
