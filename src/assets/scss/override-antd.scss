@@ -9,3 +9,18 @@
         }
     }
 }
+
+.tt-table {
+
+    .ant-collapse {
+        background: transparent;
+    }
+
+    .ant-collapse-header {
+        display: none;
+    }
+
+    .ant-collapse-content-box {
+        padding: 0 !important;
+    }
+}

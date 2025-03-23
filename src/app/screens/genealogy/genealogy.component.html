@@ -1,5 +1,40 @@
-<tt-table-layout>
+<tt-table-layout [props]="{showExpand: true}">
     <ng-container filters>
-        <input nz-input placeholder="Basic filter" [(ngModel)]="value"/>
+            <div nz-row nzGutter="8">
+                <div nz-col nzSpan="8">
+                    <nz-form-item>
+                        <input nz-input placeholder="Basic filter" [(ngModel)]="value"/>
+                    </nz-form-item>
+                </div>
+                <div nz-col nzSpan="8">
+                    <nz-form-item>
+                        <input nz-input placeholder="Basic filter" [(ngModel)]="value"/>
+                    </nz-form-item>
+                </div>
+                <div nz-col nzSpan="8">
+                    <nz-form-item>
+                        <input nz-input placeholder="Basic filter" [(ngModel)]="value"/>
+                    </nz-form-item>
+                </div>
+            </div>
+    </ng-container>
+    <ng-container filters-expand>
+            <div nz-row nzGutter="8">
+                <div nz-col nzSpan="8">
+                    <nz-form-item>
+                        <input nz-input placeholder="Basic filter" [(ngModel)]="value"/>
+                    </nz-form-item>
+                </div>
+                <div nz-col nzSpan="8">
+                    <nz-form-item>
+                        <input nz-input placeholder="Basic filter" [(ngModel)]="value"/>
+                    </nz-form-item>
+                </div>
+                <div nz-col nzSpan="8">
+                    <nz-form-item>
+                        <input nz-input placeholder="Basic filter" [(ngModel)]="value"/>
+                    </nz-form-item>
+                </div>
+            </div>
     </ng-container>
 </tt-table-layout>

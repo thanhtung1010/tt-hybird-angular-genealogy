@@ -6,10 +6,6 @@ import { BaseDto, Default, IApiBaseMeta } from 'common-service';
 export class TableLayoutPropsDto extends BaseDto implements ITableLayoutProps {
     @Expose()
     @Default(false)
-    expandFilter!: boolean;
-
-    @Expose()
-    @Default(false)
     showExpand!: boolean;
 
     @Expose()

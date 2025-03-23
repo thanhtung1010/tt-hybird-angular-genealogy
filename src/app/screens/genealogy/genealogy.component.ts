@@ -3,6 +3,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TableLayoutComponent } from '@components';
 import { NzInputModule } from 'ng-zorro-antd/input';
+import { NzGridModule } from 'ng-zorro-antd/grid';
+import { NzFormModule } from 'ng-zorro-antd/form';
 
 @Component({
     selector: 'tt-genealogy',
@@ -15,6 +17,8 @@ import { NzInputModule } from 'ng-zorro-antd/input';
         ReactiveFormsModule,
         TableLayoutComponent,
         NzInputModule,
+        NzGridModule,
+        NzFormModule,
     ],
 })
 export class GenealogyComponent implements OnInit {

@@ -7,22 +7,21 @@ export interface ICustomSVG {
     path: string;
 }
 export interface ITableLayoutProps {
-  expandFilter: boolean;
-  showExpand: boolean;
-  showReset: boolean;
-  showRefresh: boolean;
-  showExportExcel: boolean;
-  showDefaultButtons: boolean;
-  showSummarize: boolean;
-  showPagination: boolean;
-  minWidth: number;
-  maxHeight: string;
-  no_data_msg: string;
-  showTable: boolean;
-  param: IApiBaseMeta;
-  alertReset: boolean;
-  nzWidthConfig: string[];
-  nzPageSizeOptions: number[];
+  showExpand?: boolean;
+  showReset?: boolean;
+  showRefresh?: boolean;
+  showExportExcel?: boolean;
+  showDefaultButtons?: boolean;
+  showSummarize?: boolean;
+  showPagination?: boolean;
+  minWidth?: number;
+  maxHeight?: string;
+  no_data_msg?: string;
+  showTable?: boolean;
+  param?: IApiBaseMeta;
+  alertReset?: boolean;
+  nzWidthConfig?: string[];
+  nzPageSizeOptions?: number[];
 }
 
 //#region type
