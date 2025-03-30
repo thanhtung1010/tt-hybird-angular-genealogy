@@ -23,6 +23,7 @@ import { TableLayoutPropsDto } from '@dtos';
 import { NzSkeletonModule } from 'ng-zorro-antd/skeleton';
 import { NzDividerModule } from 'ng-zorro-antd/divider';
 import { NzButtonModule } from 'ng-zorro-antd/button';
+import { NzIconModule } from 'ng-zorro-antd/icon';
 
 @Component({
     selector: 'tt-table-layout',
@@ -42,6 +43,7 @@ import { NzButtonModule } from 'ng-zorro-antd/button';
         NzSkeletonModule,
         NzDividerModule,
         NzButtonModule,
+        NzIconModule,
     ],
 })
 export class TableLayoutComponent implements OnChanges {
@@ -51,9 +53,10 @@ export class TableLayoutComponent implements OnChanges {
     @Input() allowFilter: boolean = true;
     @Input() nzLoadingIndicator!: TemplateRef<any>;
 
-    @Output() oReset: EventEmitter<any> = new EventEmitter(undefined);
-    @Output() oRefresh: EventEmitter<any> = new EventEmitter(undefined);
-    @Output() oChangeParams: EventEmitter<any> = new EventEmitter(undefined);
+    @Output() searchData: EventEmitter<void> = new EventEmitter();
+    @Output() resetFilter: EventEmitter<void> = new EventEmitter();
+    @Output() refreshData: EventEmitter<void> = new EventEmitter();
+    @Output() changeParams: EventEmitter<IApiBaseMeta> = new EventEmitter();
 
     @Input() expandFilter: boolean = false;
     @Output() expandFilterChange: EventEmitter<boolean> = new EventEmitter();
@@ -114,15 +117,14 @@ export class TableLayoutComponent implements OnChanges {
         }
         if (JSON.stringify(_params) !== JSON.stringify(this.currentParams)) {
             this.currentParams = { ..._params };
-            this.oChangeParams.emit(this.currentParams);
+            this.changeParams.emit(this.currentParams);
         }
     }
     onReload() {
-        console.log('reload')
-        this.oReset.emit(this.currentParams);
+        this.resetFilter.emit();
     }
     onRefresh() {
-        this.oRefresh.emit(this.currentParams);
+        this.refreshData.emit();
     }
     onToggleExpand() {
         this.expandFilter = !this.expandFilter;

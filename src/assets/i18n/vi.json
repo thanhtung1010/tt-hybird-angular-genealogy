@@ -23,9 +23,10 @@
         "search": "Tìm kiếm",
         "add": "Thêm mới",
         "save": "Lưu",
-        "refresh": "Làm mới",
-        "reset": "Quay về bộ lọc mặc định",
+        "refresh_data": "Làm mới",
+        "reset_filter": "Bộ lọc mặc định",
         "cancel": "Huỷ",
+        "expand": "Mở rộng",
         "ok": "Đồng ý"
     },
     "message": {
