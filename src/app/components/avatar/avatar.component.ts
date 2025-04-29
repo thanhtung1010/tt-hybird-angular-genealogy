@@ -4,7 +4,6 @@ import { FirebaseService, FirebaseUserDto } from 'common-service';
 @Component({
     selector: 'tt-avatar',
     templateUrl: './avatar.component.html',
-    styleUrls: ['./avatar.component.scss'],
     standalone: true,
 })
 export class AvatarComponent implements OnInit {

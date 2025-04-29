@@ -1,0 +1,11 @@
+@use '../variable.scss';
+
+@layer utilities {
+    .my-text-1 {
+        @apply text-white;
+    }
+}
+
+// @utility text-color {
+//     @apply text-white;
+// }

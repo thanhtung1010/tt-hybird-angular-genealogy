@@ -1,6 +1,14 @@
+@use "sass:meta";
 @use '../variable.scss';
+@use "tailwindcss";
+// @import './utilities.scss';
+// @import './components.scss';
+// @import './base.scss';
+@include meta.load-css('./utilities.scss');
+@include meta.load-css('./components.scss');
+@include meta.load-css('./base.scss');
 
-@theme {
+:root {
     --font-sans: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     --font-serif: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;

@@ -37,7 +37,8 @@ export class LayoutComponent implements OnInit {
     menu: Array<MenuItemDto> = [];
     breadcrumb: Array<string> = [];
 
-    constructor(private menuService: MenuService,
+    constructor(
+        private menuService: MenuService,
         private firebase: FirebaseService,
     ) {}
 
